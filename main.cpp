@@ -1,8 +1,8 @@
 #include <cstdlib>
 
-#include "CalcResourceFactory.h"
-#include "CalcServiceSettingsFactory.h"
-#include "CalcService.h"
+#include "include/CalcResourceFactory.h"
+#include "include/CalcServiceSettingsFactory.h"
+#include "include/CalcService.h"
 
 int main(const int, const char**)
 {

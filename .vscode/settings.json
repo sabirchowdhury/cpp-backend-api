@@ -18,6 +18,8 @@
     "filesystem": "cpp",
     "xlocinfo": "cpp",
     "xstring": "cpp",
-    "tuple": "cpp"
+    "tuple": "cpp",
+    "sstream": "cpp",
+    "iomanip": "cpp"
   }
 }
