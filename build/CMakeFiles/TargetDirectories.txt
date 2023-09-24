@@ -1,0 +1,3 @@
+C:/Users/User/Documents/GitHub/cpp-backend-api/build/CMakeFiles/CalculatorAPI.dir
+C:/Users/User/Documents/GitHub/cpp-backend-api/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/User/Documents/GitHub/cpp-backend-api/build/CMakeFiles/ZERO_CHECK.dir
