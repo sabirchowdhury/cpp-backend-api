@@ -13,3 +13,5 @@ public:
     virtual shared_ptr<Resource> get_resource() const = 0;
      
 };
+
+// Defining abstract classes 

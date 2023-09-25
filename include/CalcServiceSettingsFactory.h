@@ -4,13 +4,18 @@
 
 class CalcServiceSettingsFactory : public IServiceSettingsFactory {
 
-public:
-
-    CalcServiceSettingsFactory();
-    shared_ptr<Settings> get_settings() const final;
 
 private:
 
     std::shared_ptr<Settings> _settings;
+
+
+public:
+
+    CalcServiceSettingsFactory();  // constructor
+
+    shared_ptr<Settings> get_settings() const final;
+    // final does not allow to be overridden
+
 
 };

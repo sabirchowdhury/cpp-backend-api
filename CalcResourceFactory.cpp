@@ -6,6 +6,9 @@
 
 using namespace nlohmann;
 
+// This file defines all the function templates that were defined
+// in calc resource factory
+
 CalcResourceFactory::CalcResourceFactory() {
     _resource = make_shared<Resource>();
     _resource->set_path(
@@ -18,9 +21,13 @@ CalcResourceFactory::CalcResourceFactory() {
         });
 }
 
+// url breakdown
+
 shared_ptr<Resource> CalcResourceFactory::get_resource() const {
         return _resource;
 }
+
+// return resource
 
 float CalcResourceFactory::calculate(float num1, float num2, string operation) {
     if(operation == "add") {
@@ -38,13 +45,17 @@ float CalcResourceFactory::calculate(float num1, float num2, string operation) {
 }
 
 tuple<float, float, string> CalcResourceFactory::get_path_parameters(
-        const shared_ptr<Session> session) const {
-    const auto& request = session->get_request();
-    const auto operation = request->get_path_parameter("operation");
-    auto num1 = atof(request->get_path_parameter("num1").c_str());
-    auto num2 = atof(request->get_path_parameter("num2").c_str());
-    return make_tuple(num1, num2, operation);
+    const shared_ptr<Session> session
+    ) const {
+        const auto& request = session->get_request();
+        const auto operation = request->get_path_parameter("operation");
+        auto num1 = atof(request->get_path_parameter("num1").c_str());
+        auto num2 = atof(request->get_path_parameter("num2").c_str());
+        return make_tuple(num1, num2, operation);
 } 
+
+// url breakdown
+
 
 string CalcResourceFactory::to_json(float result) {
     ostringstream str_stream;
@@ -55,6 +66,8 @@ string CalcResourceFactory::to_json(float result) {
     return jsonResult.dump();
 }
 
+// return the result as json to page
+
 void CalcResourceFactory::get_handler(const shared_ptr<Session> session) {
     const auto [num1, num2, operation] = get_path_parameters(session);
     auto result = calculate(num1, num2, operation);
@@ -62,3 +75,6 @@ void CalcResourceFactory::get_handler(const shared_ptr<Session> session) {
     session->close(OK, content, 
         {{"Content-Length", to_string(content.size())}});
 }
+
+
+// Tie all operations together

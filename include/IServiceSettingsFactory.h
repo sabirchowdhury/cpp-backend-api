@@ -13,3 +13,5 @@ public:
     virtual shared_ptr<Settings> get_settings() const = 0;
 
 };
+
+// abstract class for get_settings to be overridden

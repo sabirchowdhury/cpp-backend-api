@@ -7,11 +7,6 @@
 
 class CalcResourceFactory : public IResourceFactory {
 
-public:
-
-    CalcResourceFactory();
-    shared_ptr<Resource> get_resource() const final;
-
 private:
 
     float calculate(float num1, float num2, string operation);
@@ -21,4 +16,14 @@ private:
     void get_handler(const shared_ptr<Session> session);
 
     shared_ptr<Resource> _resource;
+
+
+    // Basic functions to calculate, get url, change tuple to json
+
+public:
+
+    CalcResourceFactory(); // constructor
+    shared_ptr<Resource> get_resource() const final;
+    // non override
+
 };
